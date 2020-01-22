@@ -4,22 +4,33 @@
   "description": "Simple React Hello World",
   "main": "index.js",
   "scripts": {
-    "start": "browserify -t babelify --outfile public/generated-app.js src/hello.jsx && echo 'Open http://localhost:8000/ in your browser' && (cd public ; python -m SimpleHTTPServer)",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production",
     "watch": "watchify -v -t babelify --outfile public/generated-app.js src/hello.jsx"
   },
   "author": "",
   "license": "ISC",
-  "repository": "none",
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.7.6",
-    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "@babel/runtime": "^7.7.7",
+    "babel-loader": "^8.0.6",
     "babelify": "^6.3.0",
     "browserify": "^11.2.0",
-    "watchify": "^3.4.0"
+    "watchify": "^3.4.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
-  }
+  },
+  "keywords": []
 }

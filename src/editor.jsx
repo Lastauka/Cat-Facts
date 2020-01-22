@@ -1,5 +1,5 @@
 import React from "react";
-
+import OurButton from "./button.jsx"
 export default class Editor extends React.Component {
   constructor(props) {
     super(props)
@@ -11,7 +11,7 @@ export default class Editor extends React.Component {
   }
 
   handleChange (e) {
-    console.log(this.state.value);
+
     this.setState({ value: e.target.value });
     
   }
@@ -19,9 +19,13 @@ export default class Editor extends React.Component {
   render () {
     return (
       <div>
-        <div>{this.state.value}</div>
+        
         <input onChange={this.handleChange}/>
+        {/* <div>one more div</div> */}
+        <OurButton data= {this.state.value}
+        /> 
       </div>
     )
   }
 }
+
